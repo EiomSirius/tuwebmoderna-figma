@@ -407,3 +407,10 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .prosa p{margin-bottom:16px;line-height:1.7;color:var(--tinta-suave)}
 .prosa p:last-child{margin-bottom:0}
 .prosa a{color:var(--verde);font-weight:600}
+
+/* Vista previa concilio (2026-10-04) */
+.marca-lima{background:linear-gradient(transparent 62%,rgba(217,244,91,.7) 62%,rgba(217,244,91,.7) 96%,transparent 96%)}
+.hero__micro{font-size:14px;color:var(--tinta-suave);margin:-18px 0 30px}
+.alternativas{margin-top:48px;border-left:4px solid var(--lima);padding-left:22px;max-width:72ch}
+.alternativas .eyebrow{margin-bottom:10px}
+.alternativas p{font-size:19px;line-height:1.65}
