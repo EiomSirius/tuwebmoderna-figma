@@ -119,18 +119,10 @@ h2{margin-bottom:18px}
 }
 .hero__hechos .n{font-family:var(--fuente-tit);font-weight:700;font-size:12px;color:var(--verde);letter-spacing:.08em}
 .hero__foto-wrap{position:relative;justify-self:center}
-.hero__foto-wrap::before{
-  /* Tono leve basado en el verde: la figura se recorta sobre el fondo claro */
-  content:"";position:absolute;inset:-8% -12%;z-index:-1;
-  background:radial-gradient(closest-side, rgba(13,104,79,.42), rgba(13,104,79,0));
-  filter:blur(10px);
-  border-radius:46% 54% 52% 48% / 48% 46% 54% 52%;
-}
 .hero__foto{
-  width:min(400px,84vw);aspect-ratio:1;object-fit:cover;
-  /* Sin máscara de arco: el retrato recortado flota */
-  border-radius:0;background:none;box-shadow:none;
-  filter:drop-shadow(0 24px 32px rgba(23,33,28,.18));
+  width:min(420px,86vw);aspect-ratio:4/5;object-fit:contain;
+  border-radius:190px 190px 26px 26px;box-shadow:var(--sombra-card);
+  background:#a6c5b9; /* Arco original, fondo en tono verde claro de la paleta */
 }
 .chat-card{
   position:absolute;left:-24px;bottom:36px;max-width:250px;
@@ -227,19 +219,9 @@ h2{margin-bottom:18px}
 .seccion--tinta .eyebrow{color:var(--lima)}
 .quien__grid{display:grid;gap:40px;align-items:start;margin-top:8px}
 .quien__foto{position:relative;justify-self:center}
-.quien__foto::before{
-  /* Resplandor verdoso suave: la figura se recorta sobre el fondo oscuro */
-  content:"";position:absolute;inset:-12% -16%;z-index:-1;
-  background:radial-gradient(closest-side, rgba(217,244,91,.45), rgba(217,244,91,0));
-  filter:blur(10px);
-  border-radius:46% 54% 52% 48% / 48% 46% 54% 52%;
-  pointer-events:none;
-}
 .quien__foto img{
-  width:min(380px,80vw);aspect-ratio:1;object-fit:cover;
-  /* Sin máscara de arco: el retrato recortado flota */
-  border-radius:0;background:none;
-  filter:drop-shadow(0 20px 28px rgba(0,0,0,.30));
+  width:min(400px,84vw);aspect-ratio:4/5;object-fit:contain;
+  border-radius:190px 190px 26px 26px;background:#a6c5b9; /* Arco original, fondo en tono verde claro */
 }
 .quien__pill{
   position:absolute;left:50%;transform:translateX(-50%);bottom:22px;
