@@ -96,7 +96,7 @@ h2{margin-bottom:18px}
   display:grid;place-items:center;font-family:var(--fuente-tit);font-weight:700;font-size:19px;flex:none;
 }
 .logo__t svg{width:27px;height:27px;display:block;transform:translateY(-1px)}
-.logo__txt{font-family:var(--fuente-tit);font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.15}
+.logo__txt{font-family:var(--fuente-tit);font-weight:800;font-size:15px;letter-spacing:-.02em;line-height:1.15}
 .logo__txt small{display:block;font-family:var(--fuente-txt);font-weight:400;font-size:11px;color:var(--tinta-suave);letter-spacing:0}
 .nav{display:flex;gap:26px}
 .nav a{color:var(--tinta);text-decoration:none;font-size:15px;font-weight:500}
