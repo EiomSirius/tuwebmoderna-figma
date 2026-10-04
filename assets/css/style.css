@@ -122,7 +122,7 @@ h2{margin-bottom:18px}
 .hero__foto-wrap::before{
   /* Tono leve basado en el verde: la figura se recorta sobre el fondo claro */
   content:"";position:absolute;inset:-8% -12%;z-index:-1;
-  background:radial-gradient(closest-side, rgba(13,104,79,.24), rgba(13,104,79,0));
+  background:radial-gradient(closest-side, rgba(13,104,79,.42), rgba(13,104,79,0));
   filter:blur(10px);
   border-radius:46% 54% 52% 48% / 48% 46% 54% 52%;
 }
@@ -230,7 +230,7 @@ h2{margin-bottom:18px}
 .quien__foto::before{
   /* Resplandor verdoso suave: la figura se recorta sobre el fondo oscuro */
   content:"";position:absolute;inset:-12% -16%;z-index:-1;
-  background:radial-gradient(closest-side, rgba(217,244,91,.28), rgba(217,244,91,0));
+  background:radial-gradient(closest-side, rgba(217,244,91,.45), rgba(217,244,91,0));
   filter:blur(10px);
   border-radius:46% 54% 52% 48% / 48% 46% 54% 52%;
   pointer-events:none;
