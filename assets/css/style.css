@@ -308,8 +308,6 @@ h1,h2,h3{font-family:var(--fuente-tit);letter-spacing:-.045em;line-height:1.04;f
   .mockups .mockup--antes{display:none}
   .mockups.mostrar-antes .mockup--antes{display:block}
   .mockups.mostrar-antes .mockup--despues{display:none}
-  /* Sin JS: iframe fluido para que la web embebida muestre su versión móvil */
-  .shot iframe{width:100%;height:72vh;transform:none}
   .conmutador{display:flex}
   .wa-float{display:none}
   .wa-bar{
