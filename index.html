@@ -116,12 +116,18 @@
         <div class="mockup mockup--antes">
           <div class="mockup__etiqueta mockup__etiqueta--antes">Ejemplo antiguo — simulado</div>
           <div class="mockup__barra" aria-hidden="true"><i></i><i></i><i></i><span>www.asesoriaentreolivos.es</span></div>
-          <div class="shot"><iframe src="antes.html" title="Versión antigua de la web de ejemplo (Asesoría Entreolivos)" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+          <div class="shot"><iframe src="antes.html" title="Versión antigua de la web de ejemplo (Asesoría Entreolivos)" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><button class="shot__ampliar" type="button" aria-label="Ampliar ejemplo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 9L4 4M4 4V8M4 4H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 9L20 4M20 4V8M20 4H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 15L4 20M4 20V16M4 20H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 15L20 20M20 20V16M20 20H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
         </div>
         <div class="mockup mockup--despues">
           <div class="mockup__etiqueta mockup__etiqueta--despues">Mi propuesta</div>
           <div class="mockup__barra" aria-hidden="true"><i></i><i></i><i></i><span>asesoriaentreolivos.es</span></div>
-          <div class="shot"><iframe src="https://negocio1.demo.eiomsirius.com?v=rojo" title="Versión moderna de la web de ejemplo (Asesoría Entreolivos)" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+          <div class="shot"><iframe src="https://negocio1.demo.eiomsirius.com?v=rojo" title="Versión moderna de la web de ejemplo (Asesoría Entreolivos)" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><button class="shot__ampliar" type="button" aria-label="Ampliar ejemplo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 9L4 4M4 4V8M4 4H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 9L20 4M20 4V8M20 4H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 15L4 20M4 20V16M4 20H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 15L20 20M20 20V16M20 20H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
         </div>
       </div>
       <p class="ejemplo__nota"><strong>Nota honesta:</strong> no es un cliente real: es una demo para que veas lo que es posible hacer con una web como la tuya.</p>
@@ -380,18 +386,49 @@
       f.style.height = ALTO_DISENO + "px";
       f.style.transform = "scale(" + k + ")";
       if (esMovil) {
-        /* En móvil: ventana del 40% del alto con scroll dentro del iframe */
+        /* En móvil: ventana inerte del 40% del alto (no captura scroll);
+           pulsar abre el visor a pantalla completa */
         marco.style.height = Math.round(window.innerHeight * 0.40) + "px";
-        marco.classList.add("shot--scroll");
       } else {
         marco.style.height = Math.round(ALTO_DISENO * k) + "px";
-        marco.classList.remove("shot--scroll");
       }
     });
   }
   window.addEventListener("resize", ajustarShots);
   window.addEventListener("load", ajustarShots);
   ajustarShots();
+
+
+  /* Visor del ejemplo a pantalla completa */
+  var visor = document.getElementById("visor"),
+      visorFrame = document.getElementById("visor-frame"),
+      visorTitulo = document.getElementById("visor-titulo"),
+      ultimoFoco = null;
+  function abrirVisor(mockup) {
+    var f = mockup.querySelector("iframe"), et = mockup.querySelector(".mockup__etiqueta");
+    visorTitulo.textContent = et ? et.textContent : "Ejemplo";
+    visorFrame.title = "Vista ampliada: " + visorTitulo.textContent;
+    visorFrame.src = f.getAttribute("src");
+    ultimoFoco = document.activeElement;
+    visor.classList.add("visor--abierto");
+    visor.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    visor.querySelector(".visor__cerrar").focus();
+  }
+  function cerrarVisor() {
+    visor.classList.remove("visor--abierto");
+    visor.setAttribute("aria-hidden", "true");
+    visorFrame.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
+  }
+  document.querySelectorAll("#mockups .shot").forEach(function (shot) {
+    shot.addEventListener("click", function () { abrirVisor(shot.closest(".mockup")); });
+  });
+  visor.querySelector(".visor__cerrar").addEventListener("click", cerrarVisor);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && visor.classList.contains("visor--abierto")) cerrarVisor();
+  });
 
   /* Barra WhatsApp móvil */
   var waBar = document.getElementById("wa-bar");
@@ -412,5 +449,17 @@
   }
 })();
 </script>
+
+  <!-- Visor ejemplo a pantalla completa -->
+  <div class="visor" id="visor" aria-hidden="true">
+    <div class="visor__marco" role="dialog" aria-modal="true" aria-labelledby="visor-titulo">
+      <div class="visor__barra">
+        <span class="visor__titulo" id="visor-titulo">Ejemplo</span>
+        <button class="visor__cerrar" type="button" aria-label="Cerrar vista ampliada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.8198 20.7684L3.75317 3.96836C3.44664 3.57425 3.72749 3 4.22678 3H6.70655C6.8917 3 7.06649 3.08548 7.18016 3.23164L20.2468 20.0316C20.5534 20.4258 20.2725 21 19.7732 21H17.2935C17.1083 21 16.9335 20.9145 16.8198 20.7684Z" stroke="currentColor" stroke-width="1.5"/>
+<path d="M20 3L4 21" stroke="currentColor" stroke-linecap="round"/></svg></button>
+      </div>
+      <iframe class="visor__frame" id="visor-frame" title="Vista ampliada del ejemplo"></iframe>
+    </div>
+  </div>
 </body>
 </html>
