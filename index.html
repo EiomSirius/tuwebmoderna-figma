@@ -343,25 +343,6 @@
     if (e.key === "Escape" && navMovil.classList.contains("abierto")) { cerrarMenu(); menuBtn.focus(); }
   });
 
-  /* Isla de navegación inteligente: se oculta al bajar, reaparece al subir */
-  var cabecera = document.querySelector(".cabecera");
-  var ultimaY = window.scrollY || 0;
-  var procesando = false;
-  function actualizarCabecera() {
-    procesando = false;
-    var y = Math.max(0, window.scrollY || 0);
-    var menuAbierto = navMovil.classList.contains("abierto");
-    if (!menuAbierto && y > 160 && y > ultimaY + 4) {
-      cabecera.classList.add("cabecera--oculta");
-    } else if (y <= 160 || y < ultimaY - 4) {
-      cabecera.classList.remove("cabecera--oculta");
-    }
-    ultimaY = y;
-  }
-  window.addEventListener("scroll", function () {
-    if (!procesando) { procesando = true; window.requestAnimationFrame(actualizarCabecera); }
-  }, { passive: true });
-
   /* Conmutador Antes / Después (móvil): "Después" por defecto */
   var mockups = document.getElementById("mockups");
   var botones = document.querySelectorAll(".conmutador button");

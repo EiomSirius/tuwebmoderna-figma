@@ -82,9 +82,7 @@ h2{margin-bottom:18px}
 }
 
 /* ---------- Cabecera píldora ---------- */
-.cabecera{position:fixed;top:14px;left:0;right:0;z-index:100;pointer-events:none;transition:transform .32s ease}
-/* Se oculta al bajar y reaparece al subir (lo controla el JS) */
-.cabecera--oculta{transform:translateY(-140%)}
+.cabecera{position:fixed;top:14px;left:0;right:0;z-index:100;pointer-events:none}
 .cabecera__pildora{
   pointer-events:auto;max-width:1180px;margin:0 auto;
   display:flex;align-items:center;gap:18px;
