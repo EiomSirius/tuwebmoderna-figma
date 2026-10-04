@@ -302,12 +302,17 @@ h2{margin-bottom:18px}
   .menu-btn{display:block}
   .cabecera__pildora{margin:0 12px}
   .nav--movil{
-    display:none;pointer-events:auto;background:#fff;border:1px solid var(--linea);border-radius:18px;
+    display:block;pointer-events:none;background:#fff;border:1px solid var(--linea);border-radius:18px;
     margin:8px 12px 0;padding:8px;box-shadow:var(--sombra-card);max-width:1180px;
+    opacity:0;transform:translateY(-10px);visibility:hidden;
+    transition:opacity .22s ease,transform .22s ease,visibility .22s;
   }
-  .nav--movil.abierto{display:block}
-  .nav--movil a{display:block;padding:13px 14px;color:var(--tinta);text-decoration:none;font-weight:600;border-radius:10px}
+  .nav--movil.abierto{opacity:1;transform:none;visibility:visible;pointer-events:auto}
+  .nav--movil a{display:flex;align-items:center;gap:14px;padding:14px;color:var(--tinta);text-decoration:none;font-weight:600;font-size:16px;border-radius:12px}
   .nav--movil a:hover{background:var(--crema)}
+  .nav--movil a svg{width:22px;height:22px;color:var(--verde);flex:none}
+  .nav--movil a.nav--movil__cta{margin-top:8px;justify-content:center;background:var(--verde);color:#fff;font-weight:700}
+  .nav--movil a.nav--movil__cta:hover{background:var(--verde-hover)}
   .chat-card{left:8px;bottom:18px}
   .mockups .mockup--antes{display:none}
   .mockups.mostrar-antes .mockup--antes{display:block}
