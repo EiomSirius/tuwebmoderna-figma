@@ -400,3 +400,12 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
   .reveal{opacity:1 !important;transform:none !important}
   details[open] > :not(summary){animation:none}
 }
+
+/* Páginas legales: texto corrido con aire */
+.prosa{max-width:72ch}
+.prosa .eyebrow{margin-bottom:14px}
+.prosa h1{font-size:clamp(38px,7vw,58px);margin:0 0 22px}
+.prosa h2{font-size:clamp(26px,4.6vw,36px);margin:40px 0 14px}
+.prosa p{margin-bottom:16px;line-height:1.7;color:var(--tinta-suave)}
+.prosa p:last-child{margin-bottom:0}
+.prosa a{color:var(--verde);font-weight:600}
