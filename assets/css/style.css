@@ -221,7 +221,7 @@ h2{margin-bottom:18px}
 .quien__foto{position:relative;justify-self:center}
 .quien__foto img{
   width:min(400px,84vw);aspect-ratio:4/5;object-fit:contain;
-  border-radius:190px 190px 26px 26px;background:#c9dad1; /* Arco original, fondo en tono verde claro */
+  border-radius:190px 190px 26px 26px;background:var(--verde-oscuro); /* Arco en verde oscuro: destaca sobre el fondo tinta */
 }
 .quien__pill{
   position:absolute;left:50%;transform:translateX(-50%);bottom:22px;
