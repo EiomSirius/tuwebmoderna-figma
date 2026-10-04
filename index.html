@@ -15,7 +15,7 @@
 <meta property="og:description" content="Soy Marco López, diseño webs modernas para negocios locales. Demo gratis por WhatsApp: 420 € IVA incluido.">
 <meta property="og:image" content="assets/img/marco-retrato.webp?v=sinfondo">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="assets/css/style.css?v=tonos42">
+<link rel="stylesheet" href="assets/css/style.css?v=video1">
 <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -84,7 +84,13 @@
         </ul>
       </div>
       <div class="hero__foto-wrap">
-        <img class="hero__foto" src="assets/img/marco-retrato.webp?v=sinfondo" alt="Marco López" width="640" height="640" fetchpriority="high">
+        <video class="hero__foto" autoplay muted loop playsinline preload="auto" aria-label="Marco López, retrato animado">
+          <!-- El .mov (HEVC con alfa) va primero: Safari lo reproduce con transparencia;
+               el resto de navegadores no entiende el contenedor quicktime y pasa al WebM. -->
+          <source src="assets/video/marco-vivo.mov?v=1" type='video/quicktime; codecs="hvc1"'>
+          <source src="assets/video/marco-vivo.webm?v=1" type='video/webm; codecs="vp9"'>
+          <img src="assets/img/marco-retrato.webp?v=sinfondo" alt="Marco López" width="640" height="640" fetchpriority="high">
+        </video>
         <div class="chat-card">
           <strong><span class="punto" aria-hidden="true"></span> Hola, soy Marco.</strong>
           <p>Yo me encargo de tu web de principio a fin.</p>
@@ -199,7 +205,11 @@
   <section class="seccion seccion--tinta" id="quien" aria-labelledby="t-quien">
     <div class="wrap quien__grid">
       <div class="quien__foto">
-        <img src="assets/img/marco-retrato.webp?v=sinfondo" alt="Marco López" width="640" height="640" loading="lazy">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Marco López, retrato animado">
+          <source src="assets/video/marco-vivo.mov?v=1" type='video/quicktime; codecs="hvc1"'>
+          <source src="assets/video/marco-vivo.webm?v=1" type='video/webm; codecs="vp9"'>
+          <img src="assets/img/marco-retrato.webp?v=sinfondo" alt="Marco López" width="640" height="640" loading="lazy">
+        </video>
         <span class="quien__pill">Alhaurín el Grande · Málaga</span>
       </div>
       <div class="quien__txt">
