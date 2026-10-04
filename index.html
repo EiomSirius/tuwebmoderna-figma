@@ -97,6 +97,7 @@
         </ul>
       </div>
       <div class="hero__foto-wrap">
+        <div class="hero__marco">
         <video class="hero__foto" autoplay muted loop playsinline preload="auto" aria-label="Marco López, retrato animado">
           <!-- El .mov (HEVC con alfa) va primero: Safari lo reproduce con transparencia;
                el resto de navegadores no entiende el contenedor quicktime y pasa al WebM. -->
@@ -104,9 +105,10 @@
           <source src="assets/video/marco-vivo.webm?v=2" type='video/webm; codecs="vp9"'>
           <img src="assets/img/marco-retrato.webp?v=sinfondo" alt="Marco López" width="640" height="640" fetchpriority="high">
         </video>
+        </div>
         <div class="chat-card">
           <strong><span class="punto" aria-hidden="true"></span> Hola, soy Marco.</strong>
-          <p>Hago que tu web represente tu negocio.</p>
+          <p>Hago que tu web represente el valor de tu negocio.</p>
         </div>
       </div>
     </div>
@@ -182,11 +184,13 @@
   <section class="seccion seccion--tinta" id="quien" aria-labelledby="t-quien">
     <div class="wrap quien__grid">
       <div class="quien__foto">
+        <div class="quien__marco">
         <video autoplay muted loop playsinline preload="metadata" aria-label="Marco López, retrato animado">
           <source src="assets/video/marco-vivo.mov?v=2" type='video/quicktime; codecs="hvc1"'>
           <source src="assets/video/marco-vivo.webm?v=2" type='video/webm; codecs="vp9"'>
           <img src="assets/img/marco-retrato.webp?v=sinfondo" alt="Marco López" width="640" height="640" loading="lazy">
         </video>
+        </div>
         <span class="quien__pill">Alhaurín el Grande · Málaga</span>
       </div>
       <div class="quien__txt">
@@ -259,7 +263,6 @@
         </p>
       </div>
     </div>
-    <div class="wrap">
     <div class="wrap alternativas">
       <span class="eyebrow">Para que compares</span>
       <p>No soy una agencia: no hay comerciales ni presupuestos de cuatro cifras. No es una plantilla que rellenas tú: mantengo tus textos y mejoro cómo están contados (y cómo los ve Google). Y no dependes de tu sobrino cuando algo se rompe: tienes mi WhatsApp.</p>
