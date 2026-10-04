@@ -371,6 +371,7 @@
   /* Escalar iframes al ancho de su marco */
   var ANCHO_DISENO = 1100, ALTO_DISENO = 1800;
   function ajustarShots() {
+    var esMovil = window.matchMedia("(max-width: 899px)").matches;
     document.querySelectorAll("#mockups .shot").forEach(function (marco) {
       if (!marco.offsetParent) return;
       var k = marco.clientWidth / ANCHO_DISENO;
@@ -378,7 +379,14 @@
       f.style.width = ANCHO_DISENO + "px";
       f.style.height = ALTO_DISENO + "px";
       f.style.transform = "scale(" + k + ")";
-      marco.style.height = Math.round(ALTO_DISENO * k) + "px";
+      if (esMovil) {
+        /* En móvil: ventana del 40% del alto con scroll dentro del iframe */
+        marco.style.height = Math.round(window.innerHeight * 0.40) + "px";
+        marco.classList.add("shot--scroll");
+      } else {
+        marco.style.height = Math.round(ALTO_DISENO * k) + "px";
+        marco.classList.remove("shot--scroll");
+      }
     });
   }
   window.addEventListener("resize", ajustarShots);
