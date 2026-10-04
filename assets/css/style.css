@@ -339,9 +339,10 @@ h2{margin-bottom:18px}
 }
 
 /* ---------- Visor ejemplo pantalla completa ---------- */
-.visor{position:fixed;inset:0;z-index:200;display:none;background:rgba(23,33,28,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.visor--abierto{display:block}
-.visor__marco{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--papel)}
+.visor{position:fixed;inset:0;z-index:200;background:rgba(23,33,28,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .26s}
+.visor--abierto{opacity:1;visibility:visible;transition:opacity .25s ease,visibility 0s}
+.visor__marco{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--papel);transform:translateY(16px) scale(.985);transition:transform .32s ease}
+.visor--abierto .visor__marco{transform:none}
 .visor__barra{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 20px;background:#fff;border-bottom:1px solid var(--linea)}
 .visor__titulo{font-family:var(--fuente-tit);font-weight:700;font-size:15px}
 .visor__cerrar{width:46px;height:46px;border-radius:50%;border:1px solid var(--linea);background:#fff;color:var(--tinta);display:grid;place-items:center;cursor:pointer;flex:none}
@@ -351,4 +352,51 @@ h2{margin-bottom:18px}
 .shot__ampliar svg{width:22px;height:22px}
 @media (min-width:900px){
   .visor__marco{inset:26px;border-radius:22px;overflow:hidden;box-shadow:0 24px 80px rgba(23,33,28,.35)}
+}
+
+/* ================= Micro-interacciones ================= */
+/* 1. Fuera el destello azul al tocar enlaces y botones en móvil */
+*,*::before,*::after{-webkit-tap-highlight-color:transparent}
+
+/* 2. Respuesta táctil: los botones se hunden un poco al pulsarlos */
+.btn:active{transform:scale(.96)}
+.wa-bar a{transition:transform .15s ease}
+.wa-bar a:active{transform:scale(.97)}
+.conmutador button{transition:transform .15s ease,background-color .2s ease,color .2s ease}
+.conmutador button:active{transform:scale(.95)}
+.shot__ampliar,.visor__cerrar,.menu-btn{transition:transform .15s ease}
+.shot__ampliar:active,.visor__cerrar:active,.menu-btn:active{transform:scale(.9)}
+
+/* 3. Las tarjetas invitan a tocarlas: se levantan al pasar el cursor */
+@media (hover:hover){
+  .mockup,.precio__tarjeta{transition:transform .25s ease,box-shadow .25s ease}
+  .mockup:hover,.precio__tarjeta:hover{transform:translateY(-5px)}
+}
+
+/* 4. Subrayado animado en el menú de escritorio */
+@media (min-width:900px){
+  .nav a{position:relative;padding-bottom:4px}
+  .nav a::after{content:"";position:absolute;left:0;top:100%;height:2px;width:100%;border-radius:2px;background:var(--verde);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav a:hover::after{transform:scaleX(1)}
+}
+
+/* 5. La hamburguesa se convierte en X al abrir */
+.menu-btn svg path{transition:transform .3s ease,opacity .18s ease;transform-box:fill-box;transform-origin:center}
+.menu-btn[aria-expanded="true"] svg path:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] svg path:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] svg path:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* 6. FAQ: el + gira y la respuesta entra suave */
+details summary{cursor:pointer}
+details .mas{display:inline-block;transition:transform .3s ease}
+details[open] .mas{transform:rotate(45deg)}
+details[open] > :not(summary){animation:faq-abrir .32s ease}
+@keyframes faq-abrir{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* 7. Aparición suave al hacer scroll (la clase la pone el JS) */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.reveal--visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1 !important;transform:none !important}
+  details[open] > :not(summary){animation:none}
 }
