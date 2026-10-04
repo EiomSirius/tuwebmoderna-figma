@@ -128,7 +128,7 @@ h2{margin-bottom:18px}
 .chat-card{
   position:absolute;left:-24px;bottom:36px;max-width:250px;
   background:#fff;border-radius:18px;padding:14px 16px;box-shadow:var(--sombra-card);
-  border:1px solid var(--linea);font-size:14px;line-height:1.45;
+  border:1px solid var(--linea);font-size:14px;line-height:1.45;color:var(--tinta);
 }
 .chat-card strong{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:4px}
 .chat-card .punto{width:9px;height:9px;border-radius:50%;background:var(--verde);flex:none}
@@ -416,3 +416,36 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .alternativas{margin-top:48px;border-left:4px solid var(--lima);padding-left:22px;max-width:72ch}
 .alternativas .eyebrow{margin-bottom:10px}
 .alternativas p{font-size:19px;line-height:1.65}
+
+/* ============ Sistema de identidad (estudio, 2026-10-04) ============ */
+/* Gesto 1 — «La lima revela»: el rotulador de Marco. Solo donde enseña
+   sin pedir nada: promesa del H1 (.marca-lima, ya existe), mockup
+   «Mi propuesta», firma del pie, filete de los momentos honestos y banda
+   de disponibilidad. Nunca en navegación, proceso ni decoración. */
+.mockup--despues{position:relative}
+.mockup--despues::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;z-index:3;
+  background:var(--lima);border-radius:var(--radio-card) var(--radio-card) 0 0;
+  transform:scaleX(1);transform-origin:left;
+}
+.mockup--despues.reveal::before{transform:scaleX(0);transition:transform .7s ease .25s}
+.mockup--despues.reveal--visible::before{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){
+  .mockup--despues.reveal::before{transform:scaleX(1);transition:none}
+}
+.ejemplo__nota{border-left:4px solid var(--lima);padding-left:22px}
+
+/* Gesto 2 — «La firma de Marco»: la tarjeta de chat, idéntica,
+   en los dos momentos decisivos (hero y CTA final) */
+.chat-card--firma{position:static;margin:0 auto 28px;max-width:300px;text-align:left}
+
+/* Gesto 3 — «La numeración del artesano»: Manrope 800, cifras tabulares,
+   la misma voz en tres escalas (hechos, pasos, disponibilidad) */
+.paso{grid-template-columns:72px 1fr}
+.paso__num{font-weight:800;font-size:clamp(24px,3.6vw,34px);letter-spacing:0;padding-top:0;font-variant-numeric:tabular-nums}
+.hero__hechos .n{font-weight:800;font-variant-numeric:tabular-nums}
+.dispo__cifra{font-weight:800;font-variant-numeric:tabular-nums}
+
+/* Disciplina adoptada: el arco es la puerta de la persona; solo su retrato */
+:root{--radio-arco:190px 190px 26px 26px}
+.hero__foto,.quien__foto video{border-radius:var(--radio-arco)}
