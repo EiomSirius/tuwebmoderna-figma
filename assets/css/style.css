@@ -121,7 +121,7 @@ h2{margin-bottom:18px}
 .hero__hechos .n{font-family:var(--fuente-tit);font-weight:700;font-size:12px;color:var(--verde);letter-spacing:.08em}
 .hero__foto-wrap{position:relative;justify-self:center}
 .hero__foto{
-  display:block;width:min(420px,86vw);aspect-ratio:4/5;object-fit:cover;
+  display:block;width:min(420px,86vw);aspect-ratio:4/5;object-fit:contain;
   border-radius:190px 190px 26px 26px;box-shadow:var(--sombra-card);
   background:#c9dad1; /* Arco original, fondo en tono verde claro de la paleta */
 }
@@ -222,7 +222,7 @@ h2{margin-bottom:18px}
 .quien__grid{display:grid;gap:40px;align-items:start;margin-top:8px}
 .quien__foto{position:relative;justify-self:center}
 .quien__foto video{
-  display:block;width:min(400px,84vw);aspect-ratio:4/5;object-fit:cover;
+  display:block;width:min(400px,84vw);aspect-ratio:4/5;object-fit:contain;
   border-radius:190px 190px 26px 26px;background:#113228; /* Arco verde muy oscuro: apenas más claro que el fondo tinta */
 }
 .quien__pill{
