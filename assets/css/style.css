@@ -313,6 +313,7 @@ h2{margin-bottom:18px}
   .mockups.mostrar-antes .mockup--antes{display:block}
   .mockups.mostrar-antes .mockup--despues{display:none}
   .conmutador{display:flex}
+  .paso{padding-left:12px}
   .wa-float{display:none}
   .wa-bar{
     display:block;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;
