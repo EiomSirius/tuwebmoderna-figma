@@ -204,7 +204,7 @@
       <div class="quien__txt">
         <span class="eyebrow">La persona detrás</span>
         <h2 id="t-quien">Soy Marco López.</h2>
-        <p class="lead">Soy Marco López, diseñador web en Alhaurín el Grande. Hablas directamente conmigo: preparo tu web y aplico los cambios que acordemos.</p>
+        <p class="lead">Diseñador web en Alhaurín el Grande. Hablas directamente conmigo: preparo tu web y aplico los cambios que acordemos.</p>
         <p>Durante años hice webs para terapeutas y proyectos de crecimiento personal. Ahora llevo esa misma calidad a los negocios locales, a un precio que pueden pagar.</p>
         <div class="trabajos">
           <a class="trabajo" href="https://wayve.es" target="_blank" rel="noopener">
@@ -342,6 +342,25 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && navMovil.classList.contains("abierto")) { cerrarMenu(); menuBtn.focus(); }
   });
+
+  /* Isla de navegación inteligente: se oculta al bajar, reaparece al subir */
+  var cabecera = document.querySelector(".cabecera");
+  var ultimaY = window.scrollY || 0;
+  var procesando = false;
+  function actualizarCabecera() {
+    procesando = false;
+    var y = Math.max(0, window.scrollY || 0);
+    var menuAbierto = navMovil.classList.contains("abierto");
+    if (!menuAbierto && y > 160 && y > ultimaY + 4) {
+      cabecera.classList.add("cabecera--oculta");
+    } else if (y <= 160 || y < ultimaY - 4) {
+      cabecera.classList.remove("cabecera--oculta");
+    }
+    ultimaY = y;
+  }
+  window.addEventListener("scroll", function () {
+    if (!procesando) { procesando = true; window.requestAnimationFrame(actualizarCabecera); }
+  }, { passive: true });
 
   /* Conmutador Antes / Después (móvil): "Después" por defecto */
   var mockups = document.getElementById("mockups");

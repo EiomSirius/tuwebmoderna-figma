@@ -51,6 +51,7 @@ body{
 img{max-width:100%;height:auto;display:block}
 a{color:var(--verde)}
 h1,h2,h3{font-family:var(--fuente-tit);letter-spacing:-.045em;line-height:1.04;font-weight:700;color:var(--tinta);text-wrap:balance}
+h2{margin-bottom:18px}
 ::selection{background:var(--lima);color:var(--tinta)}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -81,7 +82,9 @@ h1,h2,h3{font-family:var(--fuente-tit);letter-spacing:-.045em;line-height:1.04;f
 }
 
 /* ---------- Cabecera píldora ---------- */
-.cabecera{position:fixed;top:14px;left:0;right:0;z-index:100;pointer-events:none}
+.cabecera{position:fixed;top:14px;left:0;right:0;z-index:100;pointer-events:none;transition:transform .32s ease}
+/* Se oculta al bajar y reaparece al subir (lo controla el JS) */
+.cabecera--oculta{transform:translateY(-140%)}
 .cabecera__pildora{
   pointer-events:auto;max-width:1180px;margin:0 auto;
   display:flex;align-items:center;gap:18px;
@@ -119,8 +122,10 @@ h1,h2,h3{font-family:var(--fuente-tit);letter-spacing:-.045em;line-height:1.04;f
 .hero__hechos .n{font-family:var(--fuente-tit);font-weight:700;font-size:12px;color:var(--verde);letter-spacing:.08em}
 .hero__foto-wrap{position:relative;justify-self:center}
 .hero__foto{
-  width:min(420px,86vw);aspect-ratio:4/5;object-fit:cover;
-  border-radius:190px 190px 26px 26px;box-shadow:var(--sombra-card);background:var(--crema);
+  width:min(400px,84vw);aspect-ratio:1;object-fit:cover;
+  /* Sin máscara de arco: el retrato recortado flota */
+  border-radius:0;background:none;box-shadow:none;
+  filter:drop-shadow(0 24px 32px rgba(23,33,28,.18));
 }
 .chat-card{
   position:absolute;left:-24px;bottom:36px;max-width:250px;
@@ -218,8 +223,10 @@ h1,h2,h3{font-family:var(--fuente-tit);letter-spacing:-.045em;line-height:1.04;f
 .quien__grid{display:grid;gap:40px;align-items:start;margin-top:8px}
 .quien__foto{position:relative;justify-self:center}
 .quien__foto img{
-  width:min(400px,84vw);aspect-ratio:4/5;object-fit:cover;
-  border-radius:190px 190px 26px 26px;background:#243026;
+  width:min(380px,80vw);aspect-ratio:1;object-fit:cover;
+  /* Sin máscara de arco: el retrato recortado flota */
+  border-radius:0;background:none;
+  filter:drop-shadow(0 20px 28px rgba(0,0,0,.30));
 }
 .quien__pill{
   position:absolute;left:50%;transform:translateX(-50%);bottom:22px;
