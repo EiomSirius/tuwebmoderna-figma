@@ -119,6 +119,13 @@ h2{margin-bottom:18px}
 }
 .hero__hechos .n{font-family:var(--fuente-tit);font-weight:700;font-size:12px;color:var(--verde);letter-spacing:.08em}
 .hero__foto-wrap{position:relative;justify-self:center}
+.hero__foto-wrap::before{
+  /* Halo en tono claro de la paleta (lima) tras el retrato recortado */
+  content:"";position:absolute;inset:-8% -12%;z-index:-1;
+  background:radial-gradient(closest-side, rgba(217,244,91,.5), rgba(217,244,91,0));
+  filter:blur(14px);
+  border-radius:46% 54% 52% 48% / 48% 46% 54% 52%;
+}
 .hero__foto{
   width:min(400px,84vw);aspect-ratio:1;object-fit:cover;
   /* Sin máscara de arco: el retrato recortado flota */
