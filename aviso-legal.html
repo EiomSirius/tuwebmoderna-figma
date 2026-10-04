@@ -12,9 +12,40 @@
 </head>
 <body>
 <header class="cabecera">
-  <div class="wrap cabecera__inner">
-    <a class="logo" href="index.html">Tu Web <em>Moderna</em></a>
+  <div class="cabecera__pildora">
+    <a class="logo" href="index.html#inicio" aria-label="Tu Web Moderna — inicio">
+      <span class="logo__t" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21H7C4.79086 21 3 19.2091 3 17V10.7076C3 9.30887 3.73061 8.01175 4.92679 7.28679L9.92679 4.25649C11.2011 3.48421 12.7989 3.48421 14.0732 4.25649L19.0732 7.28679C20.2694 8.01175 21 9.30887 21 10.7076V17C21 19.2091 19.2091 21 17 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 17H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html#ejemplo">El ejemplo</a>
+      <a href="index.html#como-trabajo">Cómo trabajo</a>
+      <a href="index.html#precio">Precio</a>
+      <a href="index.html#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn--verde" href="https://wa.me/34633548224?text=Hola%20Marco%2C%20tengo%20un%20negocio%20y%20quiero%20una%20web." target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C10.1409 22.75 8.39016 22.2775 6.86335 21.4455L2.12395 22.2397C1.88692 22.2794 1.6452 22.2031 1.47391 22.0345C1.30261 21.8659 1.2225 21.6255 1.25845 21.3878L2.05878 16.0977C1.53735 14.8339 1.25001 13.4496 1.25001 12C1.25001 6.06294 6.06295 1.25 12 1.25ZM7.94309 6.7002C7.20774 6.7002 6.599 7.32056 6.71374 8.08595C6.929 9.52188 7.56749 12.1676 9.46536 14.0799C11.4494 16.0789 14.2876 16.9343 15.8259 17.2715C16.6211 17.4459 17.3 16.8158 17.3 16.0387V14.2151C17.3 14.0909 17.2235 13.9796 17.1076 13.935L15.1475 13.1825C15.0949 13.1623 15.0377 13.1573 14.9824 13.1681L13.0048 13.5542C11.7304 12.894 10.958 12.1532 10.4942 11.0387L10.867 9.02365C10.8769 8.97021 10.8721 8.91508 10.8531 8.86416L10.1182 6.89529C10.0744 6.77797 9.96233 6.7002 9.83711 6.7002H7.94309Z"/></svg>
+      WhatsApp
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 12H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 19H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
   </div>
+  <nav class="nav--movil" id="nav-movil" aria-label="Navegación móvil">
+    <a href="index.html#ejemplo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13C6.6 5 17.4 5 21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 17C10.3431 17 9 15.6569 9 14C9 12.3431 10.3431 11 12 11C13.6569 11 15 12.3431 15 14C15 15.6569 13.6569 17 12 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>El ejemplo</a>
+    <a href="index.html#como-trabajo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 12.5C17.2761 12.5 17.5 12.2761 17.5 12C17.5 11.7239 17.2761 11.5 17 11.5C16.7239 11.5 16.5 11.7239 16.5 12C16.5 12.2761 16.7239 12.5 17 12.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 12.5C12.2761 12.5 12.5 12.2761 12.5 12C12.5 11.7239 12.2761 11.5 12 11.5C11.7239 11.5 11.5 11.7239 11.5 12C11.5 12.2761 11.7239 12.5 12 12.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7 12.5C7.27614 12.5 7.5 12.2761 7.5 12C7.5 11.7239 7.27614 11.5 7 11.5C6.72386 11.5 6.5 11.7239 6.5 12C6.5 12.2761 6.72386 12.5 7 12.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.8214 2.48697 15.5291 3.33782 17L2.5 21.5L7 20.6622C8.47087 21.513 10.1786 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Cómo trabajo</a>
+    <a href="index.html#precio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17.4V6.6C3 6.26863 3.26863 6 3.6 6H16.6789C16.8795 6 17.0668 6.10026 17.1781 6.26718L20.7781 11.6672C20.9125 11.8687 20.9125 12.1313 20.7781 12.3328L17.1781 17.7328C17.0668 17.8997 16.8795 18 16.6789 18H3.6C3.26863 18 3 17.7314 3 17.4Z" stroke="currentColor" stroke-width="1.5"/></svg>Precio</a>
+    <a href="index.html#preguntas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 9C9 5.49997 14.5 5.5 14.5 9C14.5 11.5 12 10.9999 12 13.9999" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 18.01L12.01 17.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Preguntas</a>
+    <a class="nav--movil__cta" href="https://wa.me/34633548224?text=Hola%20Marco%2C%20tengo%20un%20negocio%20y%20quiero%20una%20web." target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+  </nav>
 </header>
 <main class="seccion">
   <div class="wrap prosa">
@@ -42,5 +73,16 @@
     </nav>
   </div>
 </footer>
+
+<script>
+(function(){
+  var b=document.querySelector(".menu-btn"),n=document.getElementById("nav-movil");
+  b.addEventListener("click",function(){
+    var a=n.classList.toggle("abierto");
+    b.setAttribute("aria-expanded",a?"true":"false");
+    b.setAttribute("aria-label",a?"Cerrar menú":"Abrir menú");
+  });
+})();
+</script>
 </body>
 </html>
