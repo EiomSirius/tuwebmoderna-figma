@@ -354,17 +354,27 @@
   }
   botones.forEach(function (b) { b.addEventListener("click", function () { setVista(b.dataset.vista); }); });
 
-  /* Escalar iframes al ancho de su marco */
+  /* Escalar iframes al ancho de su marco.
+     En móvil el iframe es fluido para que la web embebida muestre su versión móvil;
+     en escritorio se escala la maqueta de 1100px. */
   var ANCHO_DISENO = 1100, ALTO_DISENO = 1800;
   function ajustarShots() {
+    var esMovil = window.innerWidth < 900; /* mismo punto que el CSS del conmutador */
     document.querySelectorAll("#mockups .shot").forEach(function (marco) {
       if (!marco.offsetParent) return;
-      var k = marco.clientWidth / ANCHO_DISENO;
       var f = marco.querySelector("iframe");
-      f.style.width = ANCHO_DISENO + "px";
-      f.style.height = ALTO_DISENO + "px";
-      f.style.transform = "scale(" + k + ")";
-      marco.style.height = Math.round(ALTO_DISENO * k) + "px";
+      if (esMovil) {
+        f.style.width = "100%";
+        f.style.height = "72vh";
+        f.style.transform = "none";
+        marco.style.height = "72vh";
+      } else {
+        var k = marco.clientWidth / ANCHO_DISENO;
+        f.style.width = ANCHO_DISENO + "px";
+        f.style.height = ALTO_DISENO + "px";
+        f.style.transform = "scale(" + k + ")";
+        marco.style.height = Math.round(ALTO_DISENO * k) + "px";
+      }
     });
   }
   window.addEventListener("resize", ajustarShots);
