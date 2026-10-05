@@ -406,8 +406,9 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .alternativas .eyebrow{margin-bottom:10px}
 .alternativas p{font-size:19px;line-height:1.65}
 /* ---------- Hoja de petición de demo ---------- */
-.demo-sheet[hidden]{display:none}
-.demo-sheet{position:fixed;inset:0;z-index:200}
+.demo-sheet{position:fixed;inset:0;z-index:200;visibility:hidden;opacity:0;transition:opacity .22s ease,visibility 0s linear .22s}
+.demo-sheet.abierto{visibility:visible;opacity:1;transition:opacity .22s ease}
+@media (prefers-reduced-motion:reduce){.demo-sheet,.demo-sheet.abierto{transition:none}}
 .demo-sheet__overlay{position:absolute;inset:0;background:rgba(23,33,28,.55)}
 .demo-sheet__card{position:absolute;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));background:var(--papel);border-radius:18px;padding:26px 22px 20px;max-width:430px;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;margin:0 auto;box-shadow:0 18px 50px rgba(0,0,0,.3);color:var(--tinta)}
 @media(min-width:700px){.demo-sheet__card{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-50%);width:430px}}

@@ -354,7 +354,7 @@
 </footer>
 
 <!-- Hoja de petición de demo: nombre + web opcional, envía a WhatsApp -->
-<div class="demo-sheet" id="demo-sheet" hidden>
+<div class="demo-sheet" id="demo-sheet">
   <div class="demo-sheet__overlay" data-close></div>
   <div class="demo-sheet__card" role="dialog" aria-modal="true" aria-labelledby="demo-sheet-t">
     <button class="demo-sheet__close" type="button" data-close aria-label="Cerrar">×</button>
@@ -519,19 +519,12 @@
   var msg = "";
   function abrir(m) {
     msg = m || "Hola Marco, quiero mi demo gratis.";
-    sheet.hidden = false;
+    sheet.classList.add("abierto");
     document.body.style.overflow = "hidden";
-    setTimeout(function () {
-      try { nombre.focus({ preventScroll: true }); } catch (e) { nombre.focus(); }
-      /* Con el teclado abierto, asegura que la tarjeta quede visible */
-      var card = sheet.querySelector(".demo-sheet__card");
-      if (card && card.scrollIntoView) {
-        try { card.scrollIntoView({ block: "nearest" }); } catch (e2) {}
-      }
-    }, 60);
+    setTimeout(function () { try { nombre.focus({ preventScroll: true }); } catch (e) { nombre.focus(); } }, 60);
   }
   function cerrar() {
-    sheet.hidden = true;
+    sheet.classList.remove("abierto");
     document.body.style.overflow = "";
   }
   Array.prototype.forEach.call(document.querySelectorAll("[data-demo]"), function (b) {
@@ -544,7 +537,7 @@
     x.addEventListener("click", cerrar);
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !sheet.hidden) cerrar();
+    if (e.key === "Escape" && sheet.classList.contains("abierto")) cerrar();
   });
   enviar.addEventListener("click", function () {
     var n = nombre.value.trim();
@@ -552,8 +545,11 @@
     var lineas = [msg];
     if (n) lineas.push("Me llamo " + n + ".");
     lineas.push(w ? "Mi web es " + w + "." : "Todavía no tengo web.");
-    window.open(base + encodeURIComponent(lineas.join("\n")), "_blank", "noopener");
+    var url = base + encodeURIComponent(lineas.join("\n"));
+    /* Primero se cierra la hoja (y el teclado), luego se abre WhatsApp: sin saltos */
     cerrar();
+    if (document.activeElement && document.activeElement.blur) { document.activeElement.blur(); }
+    setTimeout(function () { window.open(url, "_blank", "noopener"); }, 150);
   });
 })();
 </script>
