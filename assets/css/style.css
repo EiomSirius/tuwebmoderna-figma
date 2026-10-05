@@ -153,7 +153,7 @@ h2{margin-bottom:18px}
 
 .shot iframe{width:1100px;height:1800px;border:0;transform-origin:top left;pointer-events:none}
 .ejemplo__nota{margin-top:26px;color:var(--tinta-suave);font-size:15px}
-.ejemplo__nota strong{color:var(--tinta)}
+.ejemplo__nota svg{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
 .ejemplo__cta{margin-top:18px}
 .conmutador{display:none;gap:8px;margin:0 0 18px}
 .conmutador button{
