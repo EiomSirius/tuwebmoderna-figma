@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
 <title>Diseño web para negocios locales — Tu Web Moderna</title>
 <meta name="description" content="Soy Marco López, diseño webs modernas para negocios locales. Demo gratis por WhatsApp: 420 € IVA incluido, primer año de dominio, alojamiento y mantenimiento incluido.">
 <meta name="robots" content="noindex, nofollow">
@@ -521,7 +521,14 @@
     msg = m || "Hola Marco, quiero mi demo gratis.";
     sheet.hidden = false;
     document.body.style.overflow = "hidden";
-    setTimeout(function () { try { nombre.focus({ preventScroll: true }); } catch (e) { nombre.focus(); } }, 60);
+    setTimeout(function () {
+      try { nombre.focus({ preventScroll: true }); } catch (e) { nombre.focus(); }
+      /* Con el teclado abierto, asegura que la tarjeta quede visible */
+      var card = sheet.querySelector(".demo-sheet__card");
+      if (card && card.scrollIntoView) {
+        try { card.scrollIntoView({ block: "nearest" }); } catch (e2) {}
+      }
+    }, 60);
   }
   function cerrar() {
     sheet.hidden = true;
