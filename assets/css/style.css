@@ -405,3 +405,10 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .alternativas{margin-top:48px;border-left:4px solid var(--lima);padding-left:22px;max-width:72ch}
 .alternativas .eyebrow{margin-bottom:10px}
 .alternativas p{font-size:19px;line-height:1.65}
+
+/* ---------- Versión DeepSeek ---------- */
+.version-banner{background:var(--tinta);color:var(--lima);font-size:13px;font-weight:600;letter-spacing:.04em;text-align:center;padding:10px 16px}
+.chip-caso{display:inline-block;background:var(--verde-oscuro);color:var(--papel);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+.caso-real{margin:0 0 18px}
+.pasos__cierre{margin-top:24px;font-size:18px;line-height:1.6;color:var(--tinta-suave);max-width:62ch}
+.seccion--cta .cta__riesgo{margin-top:18px;font-size:17px;color:#cfe3d9}
