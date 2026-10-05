@@ -407,6 +407,8 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .alternativas{margin-top:48px;border-left:4px solid var(--lima);padding-left:22px;max-width:72ch}
 .alternativas .eyebrow{margin-bottom:10px}
 .alternativas p{font-size:19px;line-height:1.65}
+.pasos__cierre{margin-top:24px;font-size:18px;line-height:1.6;color:var(--tinta-suave);max-width:62ch}
+.seccion--cta .cta__riesgo{margin:18px 0 32px;font-size:17px;color:#cfe3d9}
 /* ---------- Hoja de petición de demo ---------- */
 .demo-sheet{position:fixed;inset:0;z-index:200;visibility:hidden;opacity:0;transition:opacity .22s ease,visibility 0s linear .22s}
 .demo-sheet.abierto{visibility:visible;opacity:1;transition:opacity .22s ease}
