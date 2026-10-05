@@ -15,7 +15,7 @@
 <meta property="og:description" content="Soy Marco López, diseño webs modernas para negocios locales. Demo gratis por WhatsApp: 420 € IVA incluido.">
 <meta property="og:image" content="assets/img/marco-retrato.webp?v=sinfondo">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="assets/css/style.css?v=nota3">
+<link rel="stylesheet" href="assets/css/style.css?v=wa4">
 <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -361,7 +361,6 @@
     Escríbeme por WhatsApp
   </a>
 </div>
-<noscript><style>.wa-bar{transform:none}</style></noscript>
 
   <!-- Visor ejemplo a pantalla completa -->
   <div class="visor" id="visor" aria-hidden="true">
@@ -461,24 +460,6 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && visor.classList.contains("visor--abierto")) cerrarVisor();
   });
-
-  /* Barra WhatsApp móvil */
-  var waBar = document.getElementById("wa-bar");
-  if (waBar && "IntersectionObserver" in window) {
-    var heroVisible = true, ctaVisible = false;
-    function actualizar() { waBar.classList.toggle("wa-bar--visible", !heroVisible && !ctaVisible); }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.target.classList.contains("hero")) heroVisible = e.isIntersecting;
-        else ctaVisible = e.isIntersecting;
-        actualizar();
-      });
-    }, { threshold: 0 });
-    io.observe(document.querySelector(".hero"));
-    io.observe(document.querySelector(".seccion--cta"));
-  } else if (waBar) {
-    waBar.classList.add("wa-bar--visible");
-  }
 
   /* Aparición suave al hacer scroll */
   (function () {
