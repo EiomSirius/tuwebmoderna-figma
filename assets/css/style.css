@@ -411,7 +411,7 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .chip-caso{display:inline-block;background:var(--verde-oscuro);color:var(--papel);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
 .caso-real{margin:0 0 18px}
 .pasos__cierre{margin-top:24px;font-size:18px;line-height:1.6;color:var(--tinta-suave);max-width:62ch}
-.seccion--cta .cta__riesgo{margin-top:18px;font-size:17px;color:#cfe3d9}
+.seccion--cta .cta__riesgo{margin:18px 0 32px;font-size:17px;color:#cfe3d9}
 
 /* ---------- Hoja de petición de demo ---------- */
 .demo-sheet[hidden]{display:none}
