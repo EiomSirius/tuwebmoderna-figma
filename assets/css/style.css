@@ -405,3 +405,18 @@ details[open] > :not(summary){animation:faq-abrir .32s ease}
 .alternativas{margin-top:48px;border-left:4px solid var(--lima);padding-left:22px;max-width:72ch}
 .alternativas .eyebrow{margin-bottom:10px}
 .alternativas p{font-size:19px;line-height:1.65}
+/* ---------- Hoja de petición de demo ---------- */
+.demo-sheet[hidden]{display:none}
+.demo-sheet{position:fixed;inset:0;z-index:200}
+.demo-sheet__overlay{position:absolute;inset:0;background:rgba(23,33,28,.55)}
+.demo-sheet__card{position:absolute;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));background:var(--papel);border-radius:18px;padding:26px 22px 20px;max-width:430px;margin:0 auto;box-shadow:0 18px 50px rgba(0,0,0,.3);color:var(--tinta)}
+@media(min-width:700px){.demo-sheet__card{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-50%);width:430px}}
+.demo-sheet__close{position:absolute;top:8px;right:12px;background:none;border:0;font-size:28px;line-height:1;color:var(--tinta-suave);cursor:pointer;padding:8px}
+.demo-sheet__card h2{font-size:24px;margin:0 0 6px;color:var(--tinta)}
+.demo-sheet__sub{margin:0 0 16px;color:var(--tinta-suave);font-size:15px}
+.demo-field{display:block;font-size:14px;font-weight:600;margin-bottom:14px;color:var(--tinta)}
+.demo-field input{display:block;width:100%;box-sizing:border-box;margin-top:6px;font-size:16px;padding:12px 14px;border:1.5px solid var(--linea);border-radius:12px;background:#fff;color:var(--tinta);font-family:inherit}
+.demo-field input:focus{outline:none;border-color:var(--verde)}
+.demo-sheet__cta{margin:18px 0 8px}
+.demo-sheet__cta .btn{width:100%;justify-content:center;box-sizing:border-box}
+.demo-sheet__micro{font-size:13px;color:var(--tinta-suave);margin:0;text-align:center}
