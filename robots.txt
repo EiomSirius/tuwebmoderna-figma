@@ -35,3 +35,5 @@ Allow: /
 
 User-agent: *
 Disallow: /
+
+Sitemap: https://tuwebmoderna.es/sitemap.xml

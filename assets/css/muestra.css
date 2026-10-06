@@ -172,7 +172,7 @@ a{color:var(--verde)}
   .revelar{aspect-ratio:4/3}
 }
 @media (min-width:1024px){
-  .navegador{max-width:1020px}
+  .navegador{max-width:720px}
   .revelar{aspect-ratio:16/10}
 }
 @media (max-width:480px){
@@ -188,3 +188,17 @@ a{color:var(--verde)}
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
 }
+
+/* Páginas legales */
+.prosa{max-width:72ch;padding-top:1.5rem}
+.prosa .eyebrow{display:block;margin-bottom:.9rem}
+.prosa h1{font-size:clamp(2.2rem,2rem + 4vw,3.4rem);margin:0 0 1.4rem;line-height:1.1}
+.prosa h2{font-size:clamp(1.4rem,1.25rem + 1.6vw,1.9rem);margin:2.5rem 0 .9rem;line-height:1.2}
+.prosa p{margin:0 0 1rem;line-height:1.7}
+.prosa a{color:var(--verde);font-weight:600}
+.prosa__fecha{font-size:.9rem;color:var(--suave)}
+
+/* Skip-link de accesibilidad */
+.skip{position:absolute;left:1rem;top:-4rem;z-index:200;background:var(--lima);color:var(--tinta);
+  padding:.7rem 1.1rem;border-radius:.6rem;font-weight:700;text-decoration:none;transition:top .2s}
+.skip:focus{top:1rem}
