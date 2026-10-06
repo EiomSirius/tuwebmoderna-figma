@@ -30,6 +30,7 @@ a{color:var(--verde)}
 .eyebrow{font-size:.82rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
   color:var(--verde);margin:0 0 .4rem}
 .eyebrow--claro{color:var(--lima)}
+.eyebrow--demo{margin:1.4rem 0 0}
 .lede{font-size:clamp(1.2rem,1.05rem + 1vw,1.45rem);line-height:1.6;color:var(--tinta)}
 .lede--claro{color:var(--papel)}
 
