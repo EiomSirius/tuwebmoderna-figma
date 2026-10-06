@@ -137,7 +137,6 @@ a{color:var(--verde)}
 .tarjeta-precio__lista{list-style:none;display:grid;gap:.85rem;margin:0}
 .tarjeta-precio__lista li{display:flex;gap:.8rem;align-items:flex-start}
 .tarjeta-precio__lista svg{width:1.35em;height:1.35em;flex:none;color:var(--lima);margin-top:.2em}
-.precio__nota{margin:0 0 .6rem}
 .precio__susurro{color:var(--suave);font-size:1rem;margin:0}
 
 /* faq */
