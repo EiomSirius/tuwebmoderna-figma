@@ -76,6 +76,8 @@ a{color:var(--verde)}
   background:#0c1210;border-radius:999px;z-index:4}
 .movil .revelar{aspect-ratio:9/18.6}
 .movil .revelar__tag{top:-1.15rem;z-index:5}
+.movil .revelar__tag--antes{left:0}
+.movil .revelar__tag--despues{right:0}
 .revelar{position:relative;margin:0;max-width:none;aspect-ratio:4/5;
   overflow:hidden;background:#0c1210;
   touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
