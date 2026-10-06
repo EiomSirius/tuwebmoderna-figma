@@ -75,7 +75,7 @@ a{color:var(--verde)}
 .movil__isla{position:absolute;top:25px;left:50%;transform:translateX(-50%);width:104px;height:27px;
   background:#0c1210;border-radius:999px;z-index:4}
 .movil .revelar{aspect-ratio:9/18.6}
-.movil .revelar__tag{top:3.4rem}
+.movil .revelar__tag{top:1.4rem;font-size:.65rem;padding:.32rem .7rem}
 .revelar{position:relative;margin:0;max-width:none;aspect-ratio:4/5;
   overflow:hidden;background:#0c1210;
   touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
