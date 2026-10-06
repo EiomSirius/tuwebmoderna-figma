@@ -71,10 +71,9 @@ a{color:var(--verde)}
   background:#e6e3d9;border-bottom:1px solid rgba(23,33,28,.1)}
 .navegador__puntos{display:flex;gap:.5rem}
 .navegador__puntos i{width:11px;height:11px;border-radius:50%;background:#c2bdaf}
-.navegador__pantalla{padding:clamp(1.6rem,1rem + 3vw,3.2rem) clamp(2.2rem,2rem + 8vw,6.5rem);
-  background:var(--papel)}
-.revelar{position:relative;margin:0 auto;max-width:600px;aspect-ratio:3/4;
-  border-radius:14px;overflow:hidden;border:1px solid var(--linea);background:#0c1210;
+.navegador__pantalla{padding:0;background:#0c1210}
+.revelar{position:relative;margin:0;max-width:none;aspect-ratio:16/10;
+  overflow:hidden;background:#0c1210;
   touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
 .revelar__scroll{position:absolute;inset:0;will-change:transform}
 .revelar__scroll img{width:100%;height:auto;display:block;pointer-events:none;user-select:none;-webkit-user-select:none}
