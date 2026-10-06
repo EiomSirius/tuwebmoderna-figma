@@ -31,7 +31,7 @@ a{color:var(--verde)}
   color:var(--verde);margin:0 0 .4rem}
 .eyebrow--claro{color:var(--lima)}
 .eyebrow--demo{margin:4.5rem 0 0}
-.eyebrow--demo + .navegador{margin-top:1rem}
+.eyebrow--demo + .movil{margin-top:1rem}
 .lede{font-size:clamp(1.2rem,1.05rem + 1vw,1.45rem);line-height:1.6;color:var(--tinta)}
 .lede--claro{color:var(--papel)}
 
@@ -66,14 +66,16 @@ a{color:var(--verde)}
 .heroe h1{max-width:20ch;margin-left:auto;margin-right:auto}
 
 /* revelador antes/después — el gesto firma de la marca */
-.navegador{max-width:320px;margin:2.6rem auto 0;background:#fff;
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 30px 70px rgba(23,33,28,.16)}
-.navegador__barra{display:flex;align-items:center;padding:.8rem 1.25rem;
-  background:#e6e3d9}
-.navegador__puntos{display:flex;gap:.5rem}
-.navegador__puntos i{width:11px;height:11px;border-radius:50%;background:#c2bdaf}
-.navegador__pantalla{padding:0;background:#0c1210}
+.eyebrow--demo + .movil{margin-top:1rem}
+/* Mockup de móvil (mismo estilo que el navegador) */
+.movil{max-width:300px;margin:2.6rem auto 0;background:#17211c;
+  border-radius:54px;padding:13px;
+  box-shadow:0 30px 70px rgba(23,33,28,.28)}
+.movil__pantalla{position:relative;border-radius:42px;overflow:hidden;background:#0c1210}
+.movil__isla{position:absolute;top:25px;left:50%;transform:translateX(-50%);width:104px;height:27px;
+  background:#0c1210;border-radius:999px;z-index:4}
+.movil .revelar{aspect-ratio:9/18.6}
+.movil .revelar__tag{top:3.4rem}
 .revelar{position:relative;margin:0;max-width:none;aspect-ratio:4/5;
   overflow:hidden;background:#0c1210;
   touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
@@ -166,13 +168,11 @@ a{color:var(--verde)}
 .marca--pie .marca__logo{width:34px;height:34px}
 .marca--pie .marca__logo svg{width:20px;height:20px}
 
-@media (min-width:641px){
-  .navegador{max-width:680px}
-  .revelar{aspect-ratio:4/3}
+@media (min-width:641px) and (max-width:1023px){
+  .movil{max-width:340px}
 }
 @media (min-width:1024px){
-  .navegador{max-width:720px}
-  .revelar{aspect-ratio:16/10}
+  .movil{max-width:380px}
 }
 @media (max-width:480px){
   .btn{font-size:1rem;padding:.95rem 1.35rem}
