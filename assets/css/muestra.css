@@ -32,10 +32,6 @@ a{color:var(--verde)}
 .lede{font-size:clamp(1.2rem,1.05rem+1vw,1.45rem);line-height:1.6;color:var(--tinta)}
 .lede--claro{color:var(--papel)}
 
-/* aviso de variante */
-.aviso{background:var(--tinta);color:var(--papel);text-align:center;
-  font-size:.8rem;letter-spacing:.08em;padding:.45rem 1rem}
-
 /* cabecera */
 .cabecera{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
   padding:.7rem 1.25rem;background:rgba(248,247,242,.88);
@@ -67,7 +63,7 @@ a{color:var(--verde)}
 .heroe h1{max-width:20ch;margin-left:auto;margin-right:auto}
 
 /* revelador antes/después — el gesto firma de la marca */
-.revelar{position:relative;margin:2.6rem auto 0;max-width:1080px;aspect-ratio:16/10;
+.revelar{position:relative;margin:2.6rem auto 0;max-width:1020px;aspect-ratio:16/14;
   border-radius:var(--radio);overflow:hidden;box-shadow:0 30px 70px rgba(23,33,28,.22);
   background:#0c1210;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
 .revelar__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;
@@ -91,6 +87,8 @@ a{color:var(--verde)}
 .revelar__tag--antes{left:1rem}
 .revelar__tag--despues{right:1rem;background:rgba(217,244,91,.92);color:var(--tinta)}
 .revelar__nota{max-width:1080px;margin:1rem auto 0;font-size:.95rem;color:var(--suave);text-align:center}
+.revelar__ver{display:inline-block;margin-top:.5rem;font-size:.9rem;font-style:normal}
+.revelar__ver a{color:var(--verde);font-weight:600}
 .heroe__sub{font-size:clamp(1.25rem,1.05rem+1.2vw,1.6rem);font-weight:600;margin:2.6rem 0 1.6rem}
 .heroe__cta{margin:0 0 1rem}
 .heroe__micro{color:var(--suave);font-size:1rem;margin:0}
@@ -143,13 +141,13 @@ a{color:var(--verde)}
 .seccion--verde{background:var(--verde);color:var(--papel);text-align:center}
 .seccion--verde h2{color:var(--papel)}
 .seccion--verde .eyebrow{color:var(--lima)}
-.final__tel{margin:1.6rem 0 0;color:#dfe4dc}
-.final__tel a{color:var(--lima);font-weight:600;text-decoration:none}
 
 /* pie */
 .pie{background:var(--tinta);color:#aeb7ab;padding:2.2rem 0;font-size:.95rem}
 .pie__in{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
 .pie p{margin:0}
+.pie a{color:#c9d1c5;text-decoration:none}
+.pie a:hover{color:var(--lima)}
 .marca--pie .marca__txt{font-size:.95rem;color:var(--papel)}
 .marca--pie .marca__logo{width:34px;height:34px}
 .marca--pie .marca__logo svg{width:20px;height:20px}
