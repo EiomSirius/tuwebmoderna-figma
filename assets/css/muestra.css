@@ -125,7 +125,7 @@ a{color:var(--verde)}
 .marco__video{max-width:340px;margin:0 auto;
   border-radius:200px 200px var(--radio) var(--radio);
   overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.marco__video video{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:80% 50%;display:block}
+.marco__video video{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:80% 50%;display:block}
 
 /* precio */
 .tarjeta-precio{background:var(--tinta);color:var(--papel);border-radius:var(--radio);
