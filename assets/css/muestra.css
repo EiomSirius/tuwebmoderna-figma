@@ -9,6 +9,7 @@
 :root{
   --tinta:#17211c; --papel:#f8f7f2; --verde:#0d684f; --verde-oscuro:#084c3b;
   --lima:#d9f45b; --suave:#5a665e; --linea:rgba(23,33,28,.12);
+  --arco:#a3b8a9;
   --f-tit:'Manrope',system-ui,sans-serif; --f-txt:'DM Sans',system-ui,sans-serif;
   --radio:22px;
 }
@@ -63,9 +64,18 @@ a{color:var(--verde)}
 .heroe h1{max-width:20ch;margin-left:auto;margin-right:auto}
 
 /* revelador antes/después — el gesto firma de la marca */
-.revelar{position:relative;margin:2.6rem auto 0;max-width:1020px;aspect-ratio:16/14;
-  border-radius:var(--radio);overflow:hidden;box-shadow:0 30px 70px rgba(23,33,28,.22);
-  background:#0c1210;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.navegador{max-width:1020px;margin:2.6rem auto 0;background:#fff;
+  border:1px solid var(--linea);border-radius:20px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(23,33,28,.16)}
+.navegador__barra{display:flex;align-items:center;padding:.8rem 1.25rem;
+  background:#f0eee8;border-bottom:1px solid var(--linea)}
+.navegador__puntos{display:flex;gap:.5rem}
+.navegador__puntos i{width:11px;height:11px;border-radius:50%;background:#d9d6cc}
+.navegador__pantalla{padding:clamp(1.6rem,1rem+3vw,3.2rem) clamp(2.2rem,2rem+8vw,6.5rem);
+  background:var(--papel)}
+.revelar{position:relative;margin:0 auto;max-width:600px;aspect-ratio:3/4;
+  border-radius:14px;overflow:hidden;border:1px solid var(--linea);background:#0c1210;
+  touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
 .revelar__scroll{position:absolute;inset:0;will-change:transform}
 .revelar__scroll img{width:100%;height:auto;display:block;pointer-events:none;user-select:none;-webkit-user-select:none}
 .revelar__capa{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
@@ -111,9 +121,11 @@ a{color:var(--verde)}
 .seccion--oscura h2{color:var(--papel)}
 .seccion--oscura p{color:#dfe4dc}
 .marco{display:grid;gap:2.5rem;align-items:center}
-.marco__video{border-radius:190px 190px var(--radio) var(--radio);overflow:hidden;
-  max-width:340px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.marco__video video{width:100%;aspect-ratio:4/5;object-fit:cover}
+.marco__video{max-width:340px;margin:0 auto;background:var(--arco);
+  border-radius:200px 200px var(--radio) var(--radio);
+  padding:18px 18px 0;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.marco__video video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;
+  border-radius:182px 182px 10px 10px;transform:scale(1.08);transform-origin:50% 0}
 
 /* precio */
 .tarjeta-precio{background:var(--tinta);color:var(--papel);border-radius:var(--radio);
