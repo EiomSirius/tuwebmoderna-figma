@@ -65,12 +65,12 @@ a{color:var(--verde)}
 
 /* revelador antes/después — el gesto firma de la marca */
 .navegador{max-width:1020px;margin:2.6rem auto 0;background:#fff;
-  border:1px solid var(--linea);border-radius:20px;overflow:hidden;
+  border-radius:20px;overflow:hidden;
   box-shadow:0 30px 70px rgba(23,33,28,.16)}
 .navegador__barra{display:flex;align-items:center;padding:.8rem 1.25rem;
-  background:#f0eee8;border-bottom:1px solid var(--linea)}
+  background:#e6e3d9;border-bottom:1px solid rgba(23,33,28,.1)}
 .navegador__puntos{display:flex;gap:.5rem}
-.navegador__puntos i{width:11px;height:11px;border-radius:50%;background:#d9d6cc}
+.navegador__puntos i{width:11px;height:11px;border-radius:50%;background:#c2bdaf}
 .navegador__pantalla{padding:clamp(1.6rem,1rem+3vw,3.2rem) clamp(2.2rem,2rem+8vw,6.5rem);
   background:var(--papel)}
 .revelar{position:relative;margin:0 auto;max-width:600px;aspect-ratio:3/4;
