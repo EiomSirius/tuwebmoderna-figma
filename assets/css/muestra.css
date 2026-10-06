@@ -174,6 +174,13 @@ a{color:var(--verde)}
 @media (min-width:1024px){
   .movil{max-width:380px}
 }
+/* Hero en dos columnas en pantallas anchas: texto a la izquierda, mockup a la derecha */
+@media (min-width:1024px){
+  .heroe{text-align:left}
+  .heroe__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+  .heroe h1{margin-left:0;margin-right:0}
+  .heroe .eyebrow{text-align:left}
+}
 /* Pantallas anchas con poco alto (16:9 o más): el mockup se encoge */
 @media (min-width:1024px) and (min-aspect-ratio:16/9){
   .movil{max-width:270px}
