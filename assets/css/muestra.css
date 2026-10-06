@@ -107,7 +107,6 @@ a{color:var(--verde)}
 .heroe__micro{color:var(--suave);font-size:1rem;margin:0}
 
 /* proceso */
-.seccion--lineas .wrap{max-width:880px}
 .pasos{list-style:none;margin:2.6rem 0 0}
 .pasos li{display:flex;gap:1.4rem;padding:1.9rem 0;border-top:1px solid var(--linea)}
 .pasos li:last-child{border-bottom:1px solid var(--linea)}
