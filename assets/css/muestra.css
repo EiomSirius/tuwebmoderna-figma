@@ -180,7 +180,6 @@ a{color:var(--verde)}
 }
 @media (min-width:860px){
   .marco{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}
-  .marco__video{margin:0}
   .pasos li{gap:2.2rem}
 }
 @media (prefers-reduced-motion:reduce){
