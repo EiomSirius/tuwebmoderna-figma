@@ -20,7 +20,7 @@
     var r = el.getBoundingClientRect();
     var x = (e.clientX !== undefined) ? e.clientX :
       (e.touches && e.touches[0] ? e.touches[0].clientX : r.left);
-    return Math.min(96, Math.max(4, ((x - r.left) / r.width) * 100));
+    return Math.min(100, Math.max(0, ((x - r.left) / r.width) * 100));
   }
 
   el.addEventListener('pointerdown', function (e) {
@@ -40,7 +40,7 @@
   mando.addEventListener('keydown', function (e) {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
     tocado = true;
-    pos = Math.min(96, Math.max(4, pos + (e.key === 'ArrowRight' ? 5 : -5)));
+    pos = Math.min(100, Math.max(0, pos + (e.key === 'ArrowRight' ? 5 : -5)));
     pintar();
     e.preventDefault();
   });
@@ -71,7 +71,7 @@
   /* Scroll infinito y sincronizado de las dos webs */
   var scrollAntes = document.getElementById('scrollAntes');
   var scrollDespues = document.getElementById('scrollDespues');
-  var DUR = 12000;
+  var VELOCIDAD = 150; /* px por segundo: la duración se adapta al contenido */
   var enVista = false;
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) {
@@ -86,7 +86,9 @@
     requestAnimationFrame(bucle);
     if (!enVista || reduce || document.hidden) { tScroll = t; return; }
     if (tScroll === null) tScroll = t;
-    var ciclo = ((t - tScroll) % (DUR * 2)) / DUR; /* 0..2 */
+    var rango = Math.max(maxDespl(scrollAntes), maxDespl(scrollDespues));
+    var dur = Math.min(30000, Math.max(9000, rango / VELOCIDAD * 1000));
+    var ciclo = ((t - tScroll) % (dur * 2)) / dur; /* 0..2 */
     var k = ciclo < 1 ? ciclo : 2 - ciclo;         /* ping-pong 0..1..0 */
     k = k * k * (3 - 2 * k);                       /* suavizado */
     scrollAntes.style.transform = 'translateY(' + (-k * maxDespl(scrollAntes)).toFixed(1) + 'px)';
