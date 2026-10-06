@@ -90,3 +90,16 @@
   }
   requestAnimationFrame(bucle);
 })();
+
+/* El vídeo debe moverse siempre: si el autoplay falla (p. ej. modo de bajo consumo en iPad),
+   se reintenta al poder reproducir y con el primer toque en la página */
+(function () {
+  'use strict';
+  var v = document.querySelector('.marco__video video');
+  if (!v) return;
+  function intentar() {
+    if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  }
+  v.addEventListener('canplay', intentar);
+  window.addEventListener('pointerdown', intentar);
+})();
