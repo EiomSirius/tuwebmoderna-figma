@@ -65,4 +65,30 @@
   }
 
   pintar();
+
+  /* Scroll infinito y sincronizado de las dos webs */
+  var scrollAntes = document.getElementById('scrollAntes');
+  var scrollDespues = document.getElementById('scrollDespues');
+  var DUR = 24000;
+  var enVista = false;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      enVista = es[0].isIntersecting;
+    }, { threshold: 0.12 }).observe(el);
+  } else { enVista = true; }
+  function maxDespl(s) {
+    return Math.max(0, s.scrollHeight - el.clientHeight);
+  }
+  var tScroll = null;
+  function bucle(t) {
+    requestAnimationFrame(bucle);
+    if (!enVista || reduce || document.hidden) { tScroll = t; return; }
+    if (tScroll === null) tScroll = t;
+    var ciclo = ((t - tScroll) % (DUR * 2)) / DUR; /* 0..2 */
+    var k = ciclo < 1 ? ciclo : 2 - ciclo;         /* ping-pong 0..1..0 */
+    k = k * k * (3 - 2 * k);                       /* suavizado */
+    scrollAntes.style.transform = 'translateY(' + (-k * maxDespl(scrollAntes)).toFixed(1) + 'px)';
+    scrollDespues.style.transform = 'translateY(' + (-k * maxDespl(scrollDespues)).toFixed(1) + 'px)';
+  }
+  requestAnimationFrame(bucle);
 })();

@@ -66,10 +66,9 @@ a{color:var(--verde)}
 .revelar{position:relative;margin:2.6rem auto 0;max-width:1020px;aspect-ratio:16/14;
   border-radius:var(--radio);overflow:hidden;box-shadow:0 30px 70px rgba(23,33,28,.22);
   background:#0c1210;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
-.revelar__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;
-  pointer-events:none}
+.revelar__scroll{position:absolute;inset:0;will-change:transform}
+.revelar__scroll img{width:100%;height:auto;display:block;pointer-events:none;user-select:none;-webkit-user-select:none}
 .revelar__capa{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
-.revelar__capa .revelar__img{filter:saturate(.92)}
 .revelar__mando{position:absolute;top:0;bottom:0;left:50%;width:0;z-index:3;background:none;border:0;
   padding:0;cursor:ew-resize}
 .revelar__mando::before{content:"";position:absolute;top:0;bottom:0;left:-2px;width:4px;background:var(--lima);
