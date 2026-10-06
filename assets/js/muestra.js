@@ -12,6 +12,8 @@
     capa.style.clipPath = 'inset(0 ' + (100 - pos).toFixed(2) + '% 0 0)';
     mando.style.left = pos.toFixed(2) + '%';
     mando.setAttribute('aria-valuenow', String(Math.round(pos)));
+    el.classList.toggle('revelar--sin-antes', pos < 22);
+    el.classList.toggle('revelar--sin-despues', pos > 78);
   }
 
   function deEvento(e) {
@@ -69,7 +71,7 @@
   /* Scroll infinito y sincronizado de las dos webs */
   var scrollAntes = document.getElementById('scrollAntes');
   var scrollDespues = document.getElementById('scrollDespues');
-  var DUR = 24000;
+  var DUR = 12000;
   var enVista = false;
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) {
