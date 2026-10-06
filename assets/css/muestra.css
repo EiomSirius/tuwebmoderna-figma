@@ -125,8 +125,8 @@ a{color:var(--verde)}
 .marco__video{max-width:340px;margin:0 auto;background:var(--arco);
   border-radius:200px 200px var(--radio) var(--radio);
   padding:8px 8px 0;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.marco__video video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;
-  border-radius:192px 192px 10px 10px;transform:scale(1.08);transform-origin:50% 0}
+.marco__video video{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:80% 50%;
+  display:block;border-radius:192px 192px 10px 10px}
 
 /* precio */
 .tarjeta-precio{background:var(--tinta);color:var(--papel);border-radius:var(--radio);
