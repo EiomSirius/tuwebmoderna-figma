@@ -155,6 +155,7 @@ a{color:var(--verde)}
 .seccion--verde{background:var(--verde);color:var(--papel);text-align:center}
 .seccion--verde h2{color:var(--papel)}
 .seccion--verde .eyebrow{color:var(--lima)}
+.seccion--verde .wrap>p:last-child{margin-top:2rem}
 
 /* pie */
 .pie{background:var(--tinta);color:#aeb7ab;padding:2.2rem 0;font-size:.95rem}
