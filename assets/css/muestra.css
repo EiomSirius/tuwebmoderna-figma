@@ -72,7 +72,7 @@ a{color:var(--verde)}
 .navegador__puntos{display:flex;gap:.5rem}
 .navegador__puntos i{width:11px;height:11px;border-radius:50%;background:#c2bdaf}
 .navegador__pantalla{padding:0;background:#0c1210}
-.revelar{position:relative;margin:0;max-width:none;aspect-ratio:3/4;
+.revelar{position:relative;margin:0;max-width:none;aspect-ratio:2/3;
   overflow:hidden;background:#0c1210;
   touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
 .revelar__scroll{position:absolute;inset:0;will-change:transform}
