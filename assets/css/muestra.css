@@ -68,14 +68,14 @@ a{color:var(--verde)}
 /* revelador antes/después — el gesto firma de la marca */
 .eyebrow--demo + .movil{margin-top:1rem}
 /* Mockup de móvil (mismo estilo que el navegador) */
-.movil{max-width:300px;margin:2.6rem auto 0;background:#17211c;
+.movil{position:relative;max-width:300px;margin:2.6rem auto 0;background:#17211c;
   border-radius:54px;padding:13px;
   box-shadow:0 30px 70px rgba(23,33,28,.28)}
 .movil__pantalla{position:relative;border-radius:42px;overflow:hidden;background:#0c1210}
 .movil__isla{position:absolute;top:25px;left:50%;transform:translateX(-50%);width:104px;height:27px;
   background:#0c1210;border-radius:999px;z-index:4}
 .movil .revelar{aspect-ratio:9/18.6}
-.movil .revelar__tag{top:1.4rem;font-size:.65rem;padding:.32rem .7rem}
+.movil .revelar__tag{top:-1rem;font-size:.65rem;padding:.32rem .7rem;z-index:5}
 .revelar{position:relative;margin:0;max-width:none;aspect-ratio:4/5;
   overflow:hidden;background:#0c1210;
   touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
@@ -97,8 +97,8 @@ a{color:var(--verde)}
   background:rgba(23,33,28,.72);color:var(--papel);
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);pointer-events:none;
   transition:opacity .25s ease}
-.revelar--sin-antes .revelar__tag--antes,
-.revelar--sin-despues .revelar__tag--despues{opacity:0}
+.movil.revelar--sin-antes .revelar__tag--antes,
+.movil.revelar--sin-despues .revelar__tag--despues{opacity:0}
 .revelar__tag--antes{left:1rem}
 .revelar__tag--despues{right:1rem;background:rgba(217,244,91,.92);color:var(--tinta)}
 .revelar__nota{max-width:1080px;margin:2.8rem auto 0;font-size:.95rem;color:var(--suave);text-align:center}

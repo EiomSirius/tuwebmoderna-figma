@@ -12,8 +12,11 @@
     capa.style.clipPath = 'inset(0 ' + (100 - pos).toFixed(2) + '% 0 0)';
     mando.style.left = pos.toFixed(2) + '%';
     mando.setAttribute('aria-valuenow', String(Math.round(pos)));
-    el.classList.toggle('revelar--sin-antes', pos < 22);
-    el.classList.toggle('revelar--sin-despues', pos > 78);
+    var marco = el.closest('.movil');
+    if (marco) {
+      marco.classList.toggle('revelar--sin-antes', pos < 22);
+      marco.classList.toggle('revelar--sin-despues', pos > 78);
+    }
   }
 
   function deEvento(e) {
