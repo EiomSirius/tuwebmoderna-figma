@@ -96,22 +96,3 @@
   }
   requestAnimationFrame(bucle);
 })();
-
-/* Vídeo diferido: carga y reproduce solo al entrar en vista (está bajo el pliegue) */
-(function () {
-  'use strict';
-  var v = document.querySelector('video[data-diferido]');
-  if (!v) return;
-  function arrancar() {
-    v.querySelectorAll('source[data-src]').forEach(function (s) {
-      s.src = s.getAttribute('data-src'); s.removeAttribute('data-src');
-    });
-    v.load();
-    var p = v.play();
-    if (p && p.catch) p.catch(function () {});
-  }
-  if (!('IntersectionObserver' in window)) { arrancar(); return; }
-  new IntersectionObserver(function (es, io) {
-    if (es[0].isIntersecting) { io.disconnect(); arrancar(); }
-  }, { rootMargin: '200px' }).observe(v);
-})();
