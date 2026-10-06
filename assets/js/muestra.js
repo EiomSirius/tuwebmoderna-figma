@@ -72,19 +72,13 @@
   var scrollAntes = document.getElementById('scrollAntes');
   var scrollDespues = document.getElementById('scrollDespues');
   var VELOCIDAD = 150; /* px por segundo: la duración se adapta al contenido */
-  var enVista = false;
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) {
-      enVista = es[0].isIntersecting;
-    }, { threshold: 0.12 }).observe(el);
-  } else { enVista = true; }
   function maxDespl(s) {
     return Math.max(0, s.scrollHeight - el.clientHeight);
   }
   var tScroll = null;
   function bucle(t) {
     requestAnimationFrame(bucle);
-    if (!enVista || reduce || document.hidden) { tScroll = t; return; }
+    if (document.hidden) { tScroll = t; return; }
     if (tScroll === null) tScroll = t;
     var rango = Math.max(maxDespl(scrollAntes), maxDespl(scrollDespues));
     var dur = Math.min(30000, Math.max(9000, rango / VELOCIDAD * 1000));
