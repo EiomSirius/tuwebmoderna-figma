@@ -180,7 +180,8 @@ a{color:var(--verde)}
 /* Hero en dos columnas en pantallas anchas: texto a la izquierda, mockup a la derecha */
 @media (min-width:1024px){
   .heroe{text-align:left}
-  .heroe__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+  .heroe__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,4vw,4rem);align-items:start}
+  .heroe__txt{padding-top:clamp(1rem,3vw,2.5rem)}
   .heroe h1{margin-left:0;margin-right:0}
   .heroe .eyebrow{text-align:left}
   .heroe__demo .eyebrow{text-align:center}
