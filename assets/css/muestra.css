@@ -167,7 +167,7 @@ a{color:var(--verde)}
 .chat img{width:var(--foto);height:var(--foto);border-radius:50%;object-fit:cover;border:3px solid var(--lima);flex:none}
 .burbuja{background:var(--papel);color:var(--tinta);border-radius:4px 18px 18px 18px;padding:1rem 1.15rem;margin:0 var(--aire) 0 0;font-size:1.02rem;line-height:1.55;box-shadow:0 8px 22px rgba(0,0,0,.18)}
 .burbuja strong{display:block;margin-top:.5rem;font-size:.88rem;color:var(--verde)}
-.final__cta{margin:0;padding:0 var(--aire) 0 calc(var(--foto) + var(--gap));text-align:center}
+.final__cta{margin:0;padding:0 var(--aire) 0 calc(var(--foto) + var(--gap));text-align:left}
 
 /* pie */
 .pie{background:var(--tinta);color:#aeb7ab;padding:2.2rem 0;font-size:.95rem}
