@@ -72,8 +72,9 @@ a{color:var(--verde)}
   border-radius:54px;padding:13px;
   box-shadow:0 30px 70px rgba(23,33,28,.28)}
 .movil__pantalla{position:relative;border-radius:42px;overflow:hidden;background:#0c1210}
-.movil__isla{position:absolute;top:25px;left:50%;transform:translateX(-50%);width:104px;height:27px;
-  background:#0c1210;border-radius:999px;z-index:4}
+.movil__camara{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:14px;height:14px;
+  background:#050807;border-radius:50%;z-index:4;
+  box-shadow:inset 0 0 3px 1px rgba(140,190,210,.28)}
 .movil .revelar{aspect-ratio:9/18.6}
 .movil .revelar__tag{top:1.9rem;z-index:5}
 .movil .revelar__tag--antes{left:1.4rem}
