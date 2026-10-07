@@ -185,6 +185,7 @@ a{color:var(--verde)}
   .heroe h1{margin-left:0;margin-right:0}
   .heroe .eyebrow{text-align:left}
   .heroe__demo .eyebrow{text-align:center}
+  .heroe__demo .eyebrow--demo{margin-top:0}
 }
 /* Pantallas anchas con poco alto (16:9 o más): el mockup se encoge */
 @media (min-width:1024px) and (min-aspect-ratio:16/9){
