@@ -161,6 +161,22 @@ a{color:var(--verde)}
 .seccion--verde .eyebrow{color:var(--lima)}
 .seccion--verde .wrap>p:last-child{margin-top:2rem}
 
+/* reseñas */
+.resenas{display:grid;gap:1.25rem;margin:2.8rem 0 0}
+@media(min-width:900px){.resenas{grid-template-columns:repeat(3,1fr)}}
+.resena{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);
+  padding:1.7rem 1.6rem;box-shadow:0 14px 34px rgba(23,33,28,.07)}
+.resena__quien{display:flex;gap:.95rem;align-items:center;margin:0 0 1.1rem}
+.resena__foto{width:58px;height:58px;border-radius:50%;background:var(--verde);color:var(--papel);
+  display:grid;place-items:center;font-family:var(--f-tit);font-weight:700;font-size:1.2rem;flex:none}
+.resena__nombre{font-size:1.05rem}
+.resena__ejemplo{font-size:.8rem;font-weight:600;color:var(--suave);text-transform:uppercase;letter-spacing:.08em}
+.resena__negocio{font-size:.95rem;color:var(--suave)}
+.resena__web{font-size:.93rem;font-weight:600}
+.resena__texto{font-size:1.03rem;line-height:1.62;margin:0}
+.resena__texto::before{content:"“";display:block;font-family:var(--f-tit);
+  font-size:2.4rem;line-height:1;color:var(--verde);margin-bottom:.3rem}
+
 /* final: mensaje personal de Marco */
 .final__bloque{--foto:72px;--gap:.9rem;--aire:1.25rem;max-width:26rem;margin:0 auto;padding:0 var(--aire)}
 .chat{display:flex;gap:var(--gap);align-items:flex-start;text-align:left;margin:0 0 1.6rem}
