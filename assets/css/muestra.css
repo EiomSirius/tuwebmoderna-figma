@@ -157,12 +157,12 @@ a{color:var(--verde)}
 
 /* cta final */
 .seccion--verde{background:var(--verde);color:var(--papel);text-align:center}
-.seccion--verde h2{color:var(--papel)}
+.seccion--verde h2{color:var(--papel);margin-bottom:2.2rem}
 .seccion--verde .eyebrow{color:var(--lima)}
 .seccion--verde .wrap>p:last-child{margin-top:2rem}
 
 /* final: mensaje personal de Marco */
-.chat{display:flex;gap:.9rem;align-items:center;text-align:left;max-width:26rem;margin:0 auto 1.8rem}
+.chat{display:flex;gap:.9rem;align-items:flex-start;text-align:left;max-width:26rem;margin:0 auto 1.8rem}
 .chat img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--lima);flex:none}
 .burbuja{background:var(--papel);color:var(--tinta);border-radius:4px 18px 18px 18px;padding:1rem 1.15rem;margin:0 1.25rem 0 0;font-size:1.02rem;line-height:1.55;box-shadow:0 8px 22px rgba(0,0,0,.18)}
 .burbuja strong{display:block;margin-top:.5rem;font-size:.88rem;color:var(--verde)}
