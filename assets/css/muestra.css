@@ -179,9 +179,9 @@ img.resena__foto{object-fit:cover}
   font-size:2.4rem;line-height:1;color:var(--verde);margin-bottom:.3rem}
 
 /* final: mensaje personal de Marco */
-.final__bloque{--foto:72px;--gap:.9rem;--aire:1.25rem;max-width:26rem;margin:0 auto;padding:0 var(--aire)}
+.final__bloque{--foto:58px;--gap:.9rem;--aire:1.25rem;max-width:26rem;margin:0 auto;padding:0 var(--aire)}
 .chat{display:flex;gap:var(--gap);align-items:flex-start;text-align:left;margin:0 0 1.6rem}
-.chat img{width:var(--foto);height:var(--foto);border-radius:50%;object-fit:cover;border:3px solid var(--lima);flex:none}
+.chat img{width:var(--foto);height:var(--foto);border-radius:50%;object-fit:cover;flex:none}
 .burbuja{background:var(--papel);color:var(--tinta);border-radius:4px 18px 18px 18px;padding:1rem 1.15rem;margin:0;font-size:1.02rem;line-height:1.55;box-shadow:0 8px 22px rgba(0,0,0,.18)}
 .burbuja strong{display:block;margin-top:.5rem;font-size:.88rem;color:var(--verde)}
 .final__cta{margin:0}
