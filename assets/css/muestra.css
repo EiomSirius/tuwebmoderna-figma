@@ -167,7 +167,7 @@ a{color:var(--verde)}
 .resena{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);
   padding:1.7rem 1.6rem;box-shadow:0 14px 34px rgba(23,33,28,.07)}
 .resena__quien{display:flex;gap:.95rem;align-items:center;margin:0 0 1.1rem}
-.resena__foto{width:58px;height:58px;border-radius:50%;background:var(--verde);color:var(--papel);
+.resena__foto{width:68px;height:68px;border-radius:50%;background:var(--verde);color:var(--papel);
   display:grid;place-items:center;font-family:var(--f-tit);font-weight:700;font-size:1.2rem;flex:none}
 img.resena__foto{object-fit:cover}
 .resena__nombre{font-size:1.05rem}
