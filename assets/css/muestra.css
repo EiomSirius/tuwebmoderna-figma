@@ -173,7 +173,7 @@ img.resena__foto{object-fit:cover}
 .resena__nombre{font-size:1.05rem}
 .resena__ejemplo{font-size:.8rem;font-weight:600;color:var(--suave);text-transform:uppercase;letter-spacing:.08em}
 .resena__negocio{font-size:.95rem;color:var(--suave)}
-.resena__web{font-size:.93rem;font-weight:600}
+.resena__web{font-size:.93rem;font-weight:600;overflow-wrap:anywhere}
 .resena__texto{font-size:1.03rem;line-height:1.62;margin:0}
 .resena__texto::before{content:"“";display:block;font-family:var(--f-tit);
   font-size:2.4rem;line-height:1;color:var(--verde);margin-bottom:.3rem}
