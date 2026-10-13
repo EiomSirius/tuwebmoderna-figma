@@ -106,3 +106,16 @@
   v.addEventListener('canplay', intentar);
   window.addEventListener('pointerdown', intentar);
 })();
+
+/* Selector de idioma: recuerda la elección manual para que la
+   autodetección no la pise en futuras visitas */
+(function () {
+  'use strict';
+  var enlaces = document.querySelectorAll('.idioma a[data-lang]');
+  if (!enlaces.length) return;
+  enlaces.forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('twm-lang', a.getAttribute('data-lang')); } catch (_) {}
+    });
+  });
+})();

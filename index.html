@@ -2,11 +2,29 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>
+/* Autodetección de idioma: si el visitante prefiere inglés (idioma del navegador
+   o del equipo) y no ha elegido idioma manualmente, se sirve la versión inglesa */
+(function(){
+var eleccion=null;
+try{eleccion=localStorage.getItem('twm-lang');}catch(e){}
+if(eleccion)return;
+try{
+var n=navigator,
+    lista=(n.languages&&n.languages.length?n.languages:[n.language||n.userLanguage||'']).join(' ').toLowerCase();
+var esIngles=/(^|[\s,;])en([-_]|$|[\s,;])/.test(lista);
+var yaEnIngles=/^\/en(\/|$)/.test(location.pathname);
+if(esIngles&&!yaEnIngles)location.replace('/en/');
+}catch(e){}})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tu Web Moderna — Diseño web para negocios locales</title>
 <meta name="description" content="Hago que la calidad de tu negocio se note en tu web. Tu web antes de pagar: la ves terminada antes de pagar nada. 420 € IVA incluido.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://tuwebmoderna.es/">
+<link rel="alternate" hreflang="es" href="https://tuwebmoderna.es/">
+<link rel="alternate" hreflang="en" href="https://tuwebmoderna.es/en/">
+<link rel="alternate" hreflang="x-default" href="https://tuwebmoderna.es/">
 <meta name="theme-color" content="#0d684f">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -25,7 +43,7 @@
 <meta name="twitter:title" content="Diseño web para negocios locales — Tu Web Moderna">
 <meta name="twitter:description" content="Hago que la calidad de tu negocio se note en tu web. Tu web antes de pagar.">
 <meta name="twitter:image" content="https://tuwebmoderna.es/assets/img/og-poster.png">
-<link rel="stylesheet" href="assets/css/muestra.css?v=12">
+<link rel="stylesheet" href="assets/css/muestra.css?v=13">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService",
 "name":"Tu Web Moderna","description":"Diseño web para negocios locales. Tu web antes de pagar: la ves terminada antes de pagar nada.",
@@ -53,6 +71,10 @@
     <span class="marca__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#d9f45b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21H7C4.79086 21 3 19.2091 3 17V10.7076C3 9.30887 3.73061 8.01175 4.92679 7.28679L9.92679 4.25649C11.2011 3.48421 12.7989 3.48421 14.0732 4.25649L19.0732 7.28679C20.2694 8.01175 21 9.30887 21 10.7076V17C21 19.2091 19.2091 21 17 21Z"/><path d="M9 17H15"/></svg></span>
     <span class="marca__txt">Tu Web Moderna</span>
   </a>
+  <nav class="idioma" aria-label="Idioma">
+    <a href="/" data-lang="es" aria-current="true">ES</a>
+    <a href="/en/" data-lang="en">EN</a>
+  </nav>
   <a class="btn btn--peq" href="https://wa.me/34633548224?text=Hola%20Marco%2C%20me%20gustar%C3%ADa%20pedir%20la%20demo%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener">Pide tu web</a>
 </header>
 

@@ -10,7 +10,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/muestra.css?v=12">
+<link rel="stylesheet" href="assets/css/muestra.css?v=13">
+
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -41,5 +42,24 @@
     <p>Alhaurín el Grande, Málaga · <a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a></p>
   </div>
 </footer>
+<script>
+/* 404 bilingüe: si el visitante prefiere inglés, se muestra en inglés */
+(function(){try{
+var n=navigator,
+    primero=(n.languages&&n.languages.length?n.languages[0]:n.language||n.userLanguage||'');
+if(!/^en([-_]|$)/i.test(primero))return;
+document.documentElement.lang='en';
+document.title='Page not found — Tu Web Moderna';
+document.querySelector('.skip').textContent='Skip to content';
+document.querySelector('#contenido h1').textContent="This page doesn't exist.";
+document.querySelector('#contenido p').textContent="The address you're looking for has moved or never existed. The homepage does exist, and it's very good.";
+var volver=document.querySelector('#contenido .btn');
+volver.textContent='Back to the homepage';
+volver.href='/en/';
+var cta=document.querySelector('.cabecera .btn--peq');
+cta.textContent='Get your website';
+cta.href='https://wa.me/34633548224?text=Hi%20Marco%2C%20I%27d%20like%20to%20request%20my%20free%20website%20for%20my%20business.';
+}catch(e){}})();
+</script>
 </body>
 </html>
