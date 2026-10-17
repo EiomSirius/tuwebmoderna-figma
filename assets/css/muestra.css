@@ -257,3 +257,14 @@ img.resena__foto{object-fit:cover}
 .skip{position:absolute;left:1rem;top:-4rem;z-index:200;background:var(--lima);color:var(--tinta);
   padding:.7rem 1.1rem;border-radius:.6rem;font-weight:700;text-decoration:none;transition:top .2s}
 .skip:focus{top:1rem}
+
+/* destacados tienda de prueba */
+.destacados{display:grid;gap:1.25rem;margin:2.6rem 0;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.destacado{border:1px solid var(--linea);border-radius:var(--radio);padding:1.4rem;background:#fff;display:flex;flex-direction:column;gap:.55rem}
+.destacado__visual{height:120px;border-radius:14px;background:linear-gradient(135deg,var(--verde),var(--verde-oscuro));display:grid;place-items:center;margin-bottom:.4rem}
+.destacado__visual span{font-family:var(--f-tit);font-weight:700;font-size:2rem;color:var(--lima);letter-spacing:-.02em}
+.destacado h3{margin:0}
+.destacado__precio{font-family:var(--f-tit);font-weight:700;font-size:1.45rem;margin:0}
+.destacado__precio span{display:block;font-family:var(--f-txt);font-weight:400;font-size:.85rem;color:var(--suave)}
+.destacado .btn{margin-top:auto;align-self:flex-start}
+.tienda__cta{margin:0}
