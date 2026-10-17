@@ -50,14 +50,18 @@ a{color:var(--verde)}
 .idioma{display:flex;gap:.15rem;align-items:center;background:rgba(23,33,28,.07);
   border-radius:999px;padding:.18rem}
 .idioma a{font-size:.78rem;font-weight:600;letter-spacing:.05em;text-decoration:none;
-  color:var(--suave);padding:.32rem .6rem;border-radius:999px;line-height:1}
+  color:var(--suave);padding:.37rem .6rem .27rem;border-radius:999px;line-height:1}
+/* NOTA: el padding NO es simétrico a propósito. "ES"/"EN" van en mayúsculas sin
+   descendentes: con line-height:1 el hueco del descendente queda vacío bajo el
+   texto y se ve subido. Se compensa con +.05rem arriba y -.05rem abajo. */
+
 .idioma a[aria-current="true"]{background:var(--tinta);color:var(--papel)}
 @media (max-width:520px){
   .cabecera{padding:.6rem .8rem}
   .marca__txt{display:none}
   .btn--peq{font-size:.85rem;padding:.55rem 1rem}
   .idioma{padding:.14rem}
-  .idioma a{font-size:.72rem;padding:.26rem .5rem}
+  .idioma a{font-size:.72rem;padding:.31rem .5rem .21rem}
 }
 
 /* botones */
